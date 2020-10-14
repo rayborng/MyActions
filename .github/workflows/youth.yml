@@ -30,6 +30,7 @@ jobs:
                   YOUTH_REDBODY: ${{ secrets.YOUTH_REDBODY }}
                   YOUTH_TIME: ${{ secrets.YOUTH_TIME }}
                   YOUTH_NOTIFY_CONTROL: ${{ secrets.YOUTH_NOTIFY_CONTROL }}
+                  JD_COOKIE: ${{ secrets.JD_COOKIE }}
                   PUSH_KEY: ${{ secrets.PUSH_KEY }}
                   BARK_PUSH: ${{ secrets.BARK_PUSH }}
                   BARK_SOUND: ${{ secrets.BARK_SOUND }}
