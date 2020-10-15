@@ -1,4 +1,4 @@
-name: 中青看点文章阅读
+name: 中青看点阅读
 
 on:
   workflow_dispatch:
