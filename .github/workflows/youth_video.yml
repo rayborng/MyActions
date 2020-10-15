@@ -1,0 +1,36 @@
+name: 中青看点-视频观看
+
+on:
+  workflow_dispatch:
+  schedule:
+     - cron: '10 1-4 * * *'
+  watch:
+    types: started
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js 10.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+      - name: npm install
+        run: |
+          npm install
+      - name: '运行 【中青看点-视频观看-51】'
+        run: |
+          node node onlyOneExecute.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_VIDEO }}
+          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          SYNCURL: https://raw.githubusercontent.com/Sunert/Scripts/master/Task/Youth_Read.js
+
+      - name: '运行 【中青看点-视频观看2-50】'
+        run: |
+          node node node onlyOneExecute.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_VIDEO2 }}
+          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          SYNCURL: https://raw.githubusercontent.com/Sunert/Scripts/master/Task/Youth_Read.js
