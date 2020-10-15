@@ -1,4 +1,4 @@
-name: 中青看点视频观看
+name: 中青看点视频
 
 on:
   workflow_dispatch:
