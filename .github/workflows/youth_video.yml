@@ -1,4 +1,4 @@
-name: 中青看点-视频观看
+name: 中青看点视频观看
 
 on:
   workflow_dispatch:
@@ -11,14 +11,16 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     steps:
-      - uses: actions/checkout@v1
-      - name: Use Node.js 10.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: 10.x
-      - name: npm install
-        run: |
-          npm install
+        - name: Checkout codes
+          uses: actions/checkout@v2
+        - name: Use Node.js
+          uses: actions/setup-node@v1
+          with:
+              node-version: "12.x"
+        - name: npm install
+          run: |
+                npm install
+                
       - name: '运行 【中青看点-视频观看-51】'
         run: |
           node node onlyOneExecute.js
