@@ -23,7 +23,7 @@ jobs:
                 
       - name: '运行 【中青看点-视频观看-51】'
         run: |
-          node node onlyOneExecute.js
+          node onlyOneExecute.js
         env:
           YOUTH_READ: ${{ secrets.YOUTH_VIDEO }}
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
@@ -31,7 +31,7 @@ jobs:
 
       - name: '运行 【中青看点-视频观看2-50】'
         run: |
-          node node node onlyOneExecute.js
+          node onlyOneExecute.js
         env:
           YOUTH_READ: ${{ secrets.YOUTH_VIDEO2 }}
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
