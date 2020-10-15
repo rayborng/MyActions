@@ -1,4 +1,4 @@
-name: 中青看点-文章阅读
+name: 中青看点文章阅读
 
 on:
   workflow_dispatch:
@@ -16,14 +16,15 @@ jobs:
       YOUTH_READ3: ${{ secrets.YOUTH_READ3 }}
       YOUTH_READ4: ${{ secrets.YOUTH_READ4 }}
     steps:
-      - uses: actions/checkout@v1
-      - name: Use Node.js 10.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: 10.x
-      - name: npm install
-        run: |
-          npm install
+        - name: Checkout codes
+          uses: actions/checkout@v2
+        - name: Use Node.js
+          uses: actions/setup-node@v1
+          with:
+              node-version: "12.x"
+        - name: npm install
+          run: |
+                npm install
           
       - name: '运行 【中青看点自动阅读一】'
         if: env.YOUTH_READ
