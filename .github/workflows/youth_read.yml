@@ -16,12 +16,11 @@ jobs:
       YOUTH_READ3: ${{ secrets.YOUTH_READ3 }}
       YOUTH_READ4: ${{ secrets.YOUTH_READ4 }}
     steps:
-      - name: Checkout codes
-        uses: actions/checkout@v2
-      - name: Use Node.js
+      - uses: actions/checkout@v1
+      - name: Use Node.js 10.x
         uses: actions/setup-node@v1
         with:
-          node-version: "12.x"
+          node-version: 10.x
       - name: npm install
         run: |
           npm install
@@ -40,7 +39,7 @@ jobs:
         run: |
           node onlyOneExecute.js
         env:
-          YOUTH_READ: ${{ secrets.YOUTH_READ2 }}
+          YOUTH_READ: ${{ secrets.YOUTH_READ }}
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           SYNCURL: https://raw.githubusercontent.com/Sunert/Scripts/master/Task/Youth_Read.js
           
@@ -49,7 +48,7 @@ jobs:
         run: |
           node onlyOneExecute.js
         env:
-          YOUTH_READ: ${{ secrets.YOUTH_READ3 }}
+          YOUTH_READ: ${{ secrets.YOUTH_READ }}
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           SYNCURL: https://raw.githubusercontent.com/Sunert/Scripts/master/Task/Youth_Read.js
           
@@ -58,6 +57,6 @@ jobs:
         run: |
           node onlyOneExecute.js
         env:
-          YOUTH_READ: ${{ secrets.YOUTH_READ4 }}
+          YOUTH_READ: ${{ secrets.YOUTH_READ }}
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           SYNCURL: https://raw.githubusercontent.com/Sunert/Scripts/master/Task/Youth_Read.js
