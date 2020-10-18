@@ -28,6 +28,7 @@ jobs:
                   node onlyOneExecute.js
               env:
                   JD_COOKIE: ${{ secrets.JD_COOKIE }}
+                  JD_DEBUG: ${{ secrets.JD_DEBUG }}
                   PUSH_KEY: ${{ secrets.PUSH_KEY }}
                   BARK_PUSH: ${{ secrets.BARK_PUSH }}
                   BARK_SOUND: ${{ secrets.BARK_SOUND }}
@@ -37,4 +38,5 @@ jobs:
                   DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
                   jdSuperMarketUpgrade: ${{ secrets.SUPERMARKET_UPGRADE }}
                   jdBusinessCircleJump: ${{ secrets.BUSINESS_CIRCLE_JUMP }}
+                  SuperMarketShareCodes: ${{ secrets.SUPERMARKET_SHARECODES }}
                   SYNCURL: https://github.com/lxk0301/scripts/raw/master/jd_superMarket.js
