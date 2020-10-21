@@ -43,8 +43,8 @@ def isOver():
 def isJumpIndex(idx):
     indexLimit = readSecret("XMLY_ACCUMULATE_INDEX")
     if indexLimit is None:
-        indexLimit = ""
-    xmly_accumulate_index = [int(i) for i in indexLimit.split(",")]
+        return False
+    xmly_accumulate_index = [safe_cast(i,int,-1) for i in indexLimit.split(",")]
     if len(xmly_accumulate_index) <= 0:
         xmly_accumulate_index = None
     index = -1
@@ -67,7 +67,8 @@ def run():
     rewriteAgent = readSecret("XMLY_ANDROID_AGENT")
     if rewriteAgent is None:
         rewriteAgent = 'UserAgent = "ting_1.8.30(Redmi+7,Android28)"'
-
+    else:
+        rewriteAgent = 'UserAgent = "' + rewriteAgent + '"'
     for idx,xmlyCookie in enumerate(cookies.split('\n')):
         executeContent = webFileContent.replace('xmly_speed_cookie = os.environ["XMLY_SPEED_COOKIE"]','xmly_speed_cookie = "' + xmlyCookie + '"',1)
         if xmlyCookie.find("_device=android") > 0:#此时表示是获取的安卓的cookie,需要使用安卓的agent
