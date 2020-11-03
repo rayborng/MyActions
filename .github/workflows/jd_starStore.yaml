@@ -1,9 +1,9 @@
-name: 京东大赢家
+name: 京东星店长
 
 on:
     workflow_dispatch:
     schedule:
-        - cron: '5 */2 * * *'
+        - cron: '1 22 * * *'
     watch:
         types: [started]
         
@@ -21,7 +21,7 @@ jobs:
             - name: npm install
               run: |
                   npm install
-            - name: "运行【京东大赢家】"
+            - name: "运行【京东星店长】"
               run: |
                   node onlyOneExecute.js
               env:
@@ -33,4 +33,4 @@ jobs:
                   TG_USER_ID: ${{ secrets.TG_USER_ID }}
                   DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
                   DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
-                  SYNCURL: https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/scripts/jd/jd_bigWinner.js
+                  SYNCURL: https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/scripts/jd/jd_starStore.js

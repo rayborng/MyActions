@@ -3,7 +3,7 @@ name: 京东时光机
 on:
     workflow_dispatch:
     schedule:
-        - cron: '20 */4 * * * '
+        - cron: '20 */4 * * *'
     watch:
         types: [started]
         
@@ -25,11 +25,6 @@ jobs:
               run: |
                   node onlyOneExecute.js
               env:
-                  YOUTH_HEADER: ${{ secrets.YOUTH_HEADER }}
-                  YOUTH_ARTBODY: ${{ secrets.YOUTH_ARTBODY }}
-                  YOUTH_REDBODY: ${{ secrets.YOUTH_REDBODY }}
-                  YOUTH_TIME: ${{ secrets.YOUTH_TIME }}
-                  YOUTH_NOTIFY_CONTROL: ${{ secrets.YOUTH_NOTIFY_CONTROL }}
                   JD_COOKIE: ${{ secrets.JD_COOKIE }}
                   PUSH_KEY: ${{ secrets.PUSH_KEY }}
                   BARK_PUSH: ${{ secrets.BARK_PUSH }}
