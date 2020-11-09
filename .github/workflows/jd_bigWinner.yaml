@@ -1,4 +1,4 @@
-name: 京东大赢家
+name: 大赢家
 
 on:
     workflow_dispatch:
@@ -21,7 +21,7 @@ jobs:
             - name: npm install
               run: |
                   npm install
-            - name: "运行【京东大赢家】"
+            - name: "运行【大赢家】"
               run: |
                   node onlyOneExecute.js
               env:

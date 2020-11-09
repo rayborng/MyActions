@@ -1,4 +1,4 @@
-name: 京东全民营业领金币
+name: 全民营业领金币
 
 on:
   workflow_dispatch:
@@ -23,7 +23,7 @@ jobs:
             - name: npm install
               run: |
                   npm install
-            - name: "运行 【京东全民营业领金币】"
+            - name: "运行 【全民营业领金币】"
               run: |
                   node onlyOneExecute.js
               env:
