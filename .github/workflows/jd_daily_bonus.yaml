@@ -22,7 +22,7 @@ jobs:
                   node-version: "12.x"
             - name: Run app
               run: npm install
-            - run: node onlyOneExecute.js
+            - run: node oneByOneExecute.js
               env:
                   JD_COOKIE: ${{ secrets.JD_COOKIE }}
                   PUSH_KEY: ${{ secrets.PUSH_KEY }}
