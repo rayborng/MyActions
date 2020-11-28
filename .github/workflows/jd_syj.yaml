@@ -1,9 +1,9 @@
-name: 东东工厂
+name: 十元街
 
 on:
     workflow_dispatch:
     schedule:
-        - cron: '10 0,6,12,18 * * *'
+        - cron: '15 8 * * *'
     watch:
         types: [started]
         
@@ -21,7 +21,7 @@ jobs:
             - name: npm install
               run: |
                   npm install
-            - name: "运行【东东工厂】"
+            - name: "运行【十元街】"
               run: |
                   node onlyOneExecute.js
               env:
@@ -33,4 +33,4 @@ jobs:
                   TG_USER_ID: ${{ secrets.TG_USER_ID }}
                   DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
                   DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
-                  SYNCURL: https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_jdfactory.js
+                  SYNCURL: https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_syj.js
